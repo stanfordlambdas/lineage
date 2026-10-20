@@ -346,7 +346,9 @@
     {
       "id": "3dd01d07-4b70-49a5-8dc1-394efc016668",
       "name": "Yosup Joo",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 9,
       "class": "Delta"
     },
@@ -434,7 +436,8 @@
       "name": "William Lee",
       "roles": [
         "president",
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 11,
       "class": "Epsilon"
@@ -484,7 +487,9 @@
     {
       "id": "4f611f43-551b-4aa7-998c-462161a968f2",
       "name": "Chris Mah",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 13,
       "class": "Zeta"
     },
@@ -528,7 +533,9 @@
     {
       "id": "de36dd4f-c6c1-4cd1-a701-36f71733f77a",
       "name": "Steve Chin",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 5.75,
       "class": "Eta"
     },
@@ -611,7 +618,8 @@
       "name": "Tony Ngo",
       "roles": [
         "president",
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 24,
       "class": "Theta"
@@ -663,7 +671,9 @@
     {
       "id": "1516653b-922a-4d62-80be-aa435c75f00b",
       "name": "Kang Han",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 5.75,
       "class": "Iota"
     },
@@ -687,7 +697,8 @@
       "id": "a6791d46-930b-4714-83e1-d1d807d97b1c",
       "name": "Warren Wu",
       "roles": [
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 9.5,
       "class": "Iota"
@@ -725,7 +736,9 @@
     {
       "id": "3d7e64e1-81ff-485b-bbcb-c2b01102fbdd",
       "name": "Toan Ton",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 2,
       "class": "Kappa"
     },
@@ -770,7 +783,8 @@
       "id": "6e6cb260-9cd3-4d15-ace6-1c179dd5ac9c",
       "name": "Eric Sue",
       "roles": [
-        "president"
+        "president",
+        "evan_chen_award"
       ],
       "layout_x": 18.5,
       "class": "Mu"
@@ -780,7 +794,8 @@
       "name": "Albert Han",
       "roles": [
         "president",
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 21.25,
       "class": "Nu"
@@ -862,7 +877,8 @@
       "name": "Linus Chung",
       "roles": [
         "president",
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 2.75,
       "class": "Xi"
@@ -1032,7 +1048,9 @@
     {
       "id": "0071524e-23a9-436e-90dc-241966beb5d5",
       "name": "Eric Shin",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 2.75,
       "class": "Pi"
     },
@@ -1049,7 +1067,9 @@
     {
       "id": "740562db-4cf0-4cbb-a61e-80dad4ea37b4",
       "name": "Alex Dao",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 9.5,
       "class": "Rho"
     },
@@ -1077,7 +1097,9 @@
     {
       "id": "239b21ae-3da9-4ce5-92cc-c685128cf9f4",
       "name": "Philip So",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 23,
       "class": "Rho"
     },
@@ -1109,7 +1131,8 @@
       "name": "Andrew Dao",
       "roles": [
         "president",
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 20,
       "class": "Sigma"
@@ -1253,7 +1276,8 @@
       "id": "0edfd649-2c6e-4699-84e9-9692318b26fa",
       "name": "Jeff Lu",
       "roles": [
-        "president"
+        "president",
+        "evan_chen_award"
       ],
       "layout_x": 13,
       "class": "Upsilon"
@@ -1307,7 +1331,9 @@
     {
       "id": "c78d5809-3014-49c5-8102-bfe96d6b98d4",
       "name": "Conrad Chan",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 3.5,
       "class": "Phi"
     },
@@ -1329,7 +1355,8 @@
       "id": "a4e2de80-2e02-4f6f-beb7-752c07b11125",
       "name": "Victor Em",
       "roles": [
-        "president"
+        "president",
+        "evan_chen_award"
       ],
       "layout_x": 1.5,
       "class": "Phi"
@@ -1402,7 +1429,8 @@
       "name": "David Huynh",
       "roles": [
         "president",
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 1.5,
       "class": "Chi"
@@ -1467,7 +1495,8 @@
       "id": "bdf70613-0f20-4a5d-8328-02410eda94c3",
       "name": "Jason Kung",
       "roles": [
-        "president"
+        "president",
+        "evan_chen_award"
       ],
       "layout_x": 3.5,
       "class": "Psi"
@@ -1536,7 +1565,8 @@
       "id": "257c6660-e2b3-461b-9768-b2beb21e894d",
       "name": "Rob Resma",
       "roles": [
-        "president"
+        "president",
+        "evan_chen_award"
       ],
       "layout_x": 21,
       "class": "Alpha Alpha"
@@ -1603,7 +1633,8 @@
       "id": "90b08301-8f12-4ff2-ae68-b9b36ec2f2d8",
       "name": "Nick Trac",
       "roles": [
-        "president"
+        "president",
+        "evan_chen_award"
       ],
       "layout_x": 3.5,
       "class": "Alpha Beta"
@@ -1679,7 +1710,8 @@
       "id": "2a130174-6a8d-4561-bcb7-47cd158556f2",
       "name": "Vikram Sreedhar",
       "roles": [
-        "president"
+        "president",
+        "evan_chen_award"
       ],
       "layout_x": 26,
       "class": "Alpha Delta"
@@ -2028,7 +2060,9 @@
     {
       "id": "5feb748a-a69b-409b-8eb8-c568b6002afa",
       "name": "David Zhou",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 3.5,
       "class": "Alpha Kappa"
     },
@@ -2042,7 +2076,9 @@
     {
       "id": "5727bf6a-fa76-4344-afea-7ac7965cdbc2",
       "name": "Anton Lok",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 13.75,
       "class": "Alpha Kappa"
     },
@@ -2091,7 +2127,9 @@
     {
       "id": "6b239761-29b3-4498-a2a7-8b8a79fecb61",
       "name": "Terrance Yang",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 5.75,
       "class": "Alpha Mu"
     },

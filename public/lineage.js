@@ -20,7 +20,7 @@
         class_name: String(source ? n.Class : n.class_name).trim(),
         rank: Number(source ? n.Class_Order - 1 : n.rank),
         x: Number(source ? n.Layout_X : n.x),
-        roles: [...new Set(rawRoles.filter(role => role === 'president' || role === 'sensei'))],
+        roles: [...new Set(rawRoles.filter(role => role === 'president' || role === 'sensei' || role === 'evan_chen_award'))],
       };
     });
     const byId = new Map(nodes.map(n => [n.id, n]));

@@ -37,7 +37,7 @@ test('map cards avoid per-node filters and group opacity', () => {
 
 test('legend entries and controls keep their labels and order', () => {
   const legend = [...html.match(/<div class="legend">(.*?)<\/div>/)[1].matchAll(/<\/i>([^<]+)<\/span>/g)].map(m => m[1]);
-  assert.deepEqual(legend, ['Brother', 'President', 'Sensei', 'President &amp; Sensei', 'Big–Little Relationship']);
+  assert.deepEqual(legend, ['Brother', 'President', 'Sensei', 'President &amp; Sensei', 'Evan Chen Award', 'Big–Little Relationship']);
   const labels = ['Stanford Lambdas', 'Edit Lineage', 'Open Graph', 'Light Mode', 'Theta Chapter Lineage',
     'Full Overview', 'Recent Classes', 'Pledge Classes', 'Reset', 'Lineage Map', 'Isolate Lineage', 'Fit Lineage',
     'Fit View', 'You Are Here', 'Lineage Details', 'Explore a Lineage'];
