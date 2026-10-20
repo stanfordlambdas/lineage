@@ -38,7 +38,7 @@ lint:
 
 build: prepare
 	$(PYTHON) scripts/package_site.py
-	cd $(DEPLOY_DIR) && npm install && npm run build
+	cd $(DEPLOY_DIR) && npm ci && npm run build
 
 preview: build
 	cd $(DEPLOY_DIR) && npm run dev
