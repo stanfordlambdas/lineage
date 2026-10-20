@@ -270,9 +270,12 @@ function renderDetails(member) {
   close.addEventListener('click', () => aside.classList.remove('open'));
   heading.append(title, close);
   const badges = el('div', {class:'badges'});
-  if (member.roles.includes('president')) badges.append(el('span', {class:'badge president-badge'}, 'President'));
-  if (member.roles.includes('sensei')) badges.append(el('span', {class:'badge sensei-badge'}, 'Sensei'));
-  if (!member.roles.length) badges.append(el('span', {class:'badge'}, 'Member'));
+  // Both roles share one badge, matching the legend, so it fits beside long class names.
+  const president = member.roles.includes('president'), sensei = member.roles.includes('sensei');
+  if (president && sensei) badges.append(el('span', {class:'badge both-badge'}, 'President & Sensei'));
+  else if (president) badges.append(el('span', {class:'badge president-badge'}, 'President'));
+  else if (sensei) badges.append(el('span', {class:'badge sensei-badge'}, 'Sensei'));
+  else badges.append(el('span', {class:'badge'}, 'Member'));
   heading.append(badges);
   aside.append(heading);
 
