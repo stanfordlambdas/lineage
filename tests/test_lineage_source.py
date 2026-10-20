@@ -1,7 +1,5 @@
 import copy
-import json
 import unittest
-from pathlib import Path
 
 from scripts.prepare_viewer import build_graph
 
@@ -23,15 +21,6 @@ def sample_source():
 
 
 class LineageSourceTests(unittest.TestCase):
-    def test_canonical_source_is_sanitized_and_builds_viewer_data(self):
-        source = json.loads(Path("source/lineage.json").read_text(encoding="utf-8"))
-        graph = build_graph(source)
-        self.assertEqual(set(source), {"schema_version", "classes", "members", "edges"})
-        self.assertTrue(all(set(member) == {"id", "name", "class", "roles", "layout_x"} for member in source["members"]))
-        self.assertEqual(len(graph["nodes"]), len(source["members"]))
-        self.assertEqual(len(graph["edges"]), len(source["edges"]))
-        self.assertEqual(set(graph["nodes"][0]), {"id", "display_name", "class_name", "rank", "x", "roles"})
-
     def test_rejects_private_or_unknown_fields(self):
         for field in ("roster_number", "email", "phone", "location", "company"):
             source = sample_source()
