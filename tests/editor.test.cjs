@@ -53,3 +53,22 @@ test('search returns name/class matches without changing source', () => {
   assert.deepEqual(Editor.searchMembers(data, 'founding'), [data.members[0]]);
   assert.deepEqual(Editor.searchMembers(data, ''), []);
 });
+
+test('viewer keeps the map view when the editor changes the graph', () => {
+  const app = require('node:fs').readFileSync('public/app.js', 'utf8');
+  assert.match(app, /onChange\(updatedSource\) \{[^}]*updateGraph\(graphFromSource\(updatedSource\)\)/);
+  assert.doesNotMatch(app.match(/function updateGraph[\s\S]*?\n\}/)[0], /recent\(\)|reset\(\)|center\(|fit\(/);
+});
+
+test('Open graph accepts the source format the editor downloads', () => {
+  const app = require('node:fs').readFileSync('public/app.js', 'utf8');
+  assert.match(app, /function openGraph\(raw\)/);
+  assert.match(app, /assertCanonical\(raw\)/);
+  assert.match(app, /openGraph\(JSON\.parse\(await file\.text\(\)\)\)/);
+});
+
+test('editor is disabled after opening an older-format graph', () => {
+  const app = require('node:fs').readFileSync('public/app.js', 'utf8');
+  const open = app.match(/function openGraph[\s\S]*?\n\}/)[0];
+  assert.match(open, /schema_version === undefined\) \{\s*load\(raw\);\s*[^]*?editorSource = null/);
+});
