@@ -1,6 +1,6 @@
 /*
   Design tokens. Color carries one meaning each: neutrals for structure and
-  state (hover, selected, lineage), blue for President, rose for Sensei.
+  state (hover, selected, lineage), blue for President, rose for Sensei, gold for the Evan Chen Award.
   Every role color also appears with a text label, never color alone.
 */
 :root {
@@ -23,6 +23,7 @@
   --sensei-fill: #351c23;
   --sensei-border: #8c3e4c;
   --sensei-strong: #c64a60;
+  --award: #e0b65a;
   --on-role: #fff;
   --edge: #62626c;
   --edge-active: #ededef;
@@ -78,6 +79,7 @@
   --sensei-fill: #fcebee;
   --sensei-border: #eab0bb;
   --sensei-strong: #bb3650;
+  --award: #9a6a12;
   --edge: #8a8a94;
   --edge-active: #18181b;
   --band: #00000005;
@@ -149,6 +151,7 @@ h1 { margin: 0 0 2px; font: var(--weight-medium) 20px/1.25 var(--font-serif); }
 .legend .president-swatch { border-color: var(--president); background: var(--president-fill); }
 .legend .sensei-swatch { border-color: var(--sensei); background: var(--sensei-fill); }
 .legend .both-swatch { border-color: var(--text-muted); background: linear-gradient(90deg, var(--president-fill) 50%, var(--sensei-fill) 50%); }
+.legend .award-swatch { display: grid; place-items: center; border: 0; background: none; color: var(--award); font-style: normal; font-size: var(--text-sm); line-height: 1; }
 .legend .edge-swatch { height: 0; border: 0; border-top: 2px solid var(--edge); border-radius: 0; background: none; }
 
 /* Map */
@@ -175,6 +178,7 @@ h2 { font-size: var(--text-lg); font-weight: var(--weight-semibold); }
 .node.sensei .role { fill: var(--sensei); }
 .node.both .card { fill: url(#both); stroke: var(--text-faint); }
 .node.both .role { fill: var(--text-muted); }
+.node .award-mark { fill: var(--award); font-size: 14px; pointer-events: none; }
 .both-president { stop-color: var(--president-fill); }
 .both-sensei { stop-color: var(--sensei-fill); }
 .node:hover .card { stroke: var(--text-muted); }
@@ -183,7 +187,7 @@ h2 { font-size: var(--text-lg); font-weight: var(--weight-semibold); }
 .node:focus-visible { outline: none; }
 /* Fade dimmed nodes per shape; group opacity forces an offscreen layer per node. */
 .node.dim .card { fill-opacity: .2; stroke-opacity: .2; }
-.node.dim .name, .node.dim .role { fill-opacity: .2; }
+.node.dim .name, .node.dim .role, .node.dim .award-mark { fill-opacity: .2; }
 /* Keyboard focus is dashed so it reads differently from the solid selected outline. */
 .node:focus-visible .card { stroke: var(--text); stroke-width: 2; stroke-dasharray: 6 4; stroke-opacity: 1; }
 /* Zoomed out: names get larger and role colors get stronger so roles stay visible. */
@@ -221,8 +225,8 @@ footer #status { color: var(--text-muted); }
 .details-heading .eyebrow { white-space: nowrap; }
 .details-heading h2 { order: 1; flex-basis: 100%; }
 .details-close { display: none; }
-.badges { display: flex; gap: 6px; }
-.badge { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 var(--space-2); border: 1px solid var(--border-strong); border-radius: 999px; color: var(--text-muted); font-size: var(--text-xs); font-weight: var(--weight-medium); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { display: inline-flex; white-space: nowrap; align-items: center; gap: 6px; height: 22px; padding: 0 var(--space-2); border: 1px solid var(--border-strong); border-radius: 999px; color: var(--text-muted); font-size: var(--text-xs); font-weight: var(--weight-medium); }
 .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--text-faint); }
 .president-badge { color: var(--text); }
 .president-badge::before { background: var(--president); }
@@ -230,6 +234,8 @@ footer #status { color: var(--text-muted); }
 .sensei-badge::before { background: var(--sensei); }
 .both-badge { color: var(--text); }
 .both-badge::before { background: linear-gradient(90deg, var(--president) 50%, var(--sensei) 50%); }
+.award-badge { color: var(--text); }
+.award-badge::before { background: var(--award); }
 .lineage-section { margin-top: var(--space-5); }
 .lineage-section h3 { margin: 0 0 var(--space-1); }
 /* Rows reach into the panel padding so their text lines up with the title and the hover fill has room. */

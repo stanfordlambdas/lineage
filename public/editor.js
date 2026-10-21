@@ -2,7 +2,8 @@
 (function (root) {
   'use strict';
 
-  const ALLOWED_ROLES = new Set(['president', 'sensei']);
+  const ALLOWED_ROLES = new Set(['president', 'sensei', 'evan_chen_award']);
+  const ROLE_LABELS = {president: 'President', sensei: 'Sensei', evan_chen_award: 'Evan Chen Award'};
   const ROOT_KEYS = ['schema_version', 'classes', 'members', 'edges'];
   const MEMBER_KEYS = ['id', 'name', 'class', 'roles', 'layout_x'];
   const EDGE_KEYS = ['source', 'target'];
@@ -28,7 +29,7 @@
       ids.add(member.id);
       if (typeof member.name !== 'string' || !member.name.trim()) fail('Every member needs a name.');
       if (typeof member.class !== 'string' || !ranks.has(member.class)) fail(`Choose a valid class for ${member.name || 'the member'}.`);
-      if (!Array.isArray(member.roles) || member.roles.some(role => !ALLOWED_ROLES.has(role)) || new Set(member.roles).size !== member.roles.length) fail(`Roles for ${member.name} must be unique President/Sensei values.`);
+      if (!Array.isArray(member.roles) || member.roles.some(role => !ALLOWED_ROLES.has(role)) || new Set(member.roles).size !== member.roles.length) fail(`Roles for ${member.name} must be unique President/Sensei/Evan Chen Award values.`);
       if (typeof member.layout_x !== 'number' || !Number.isFinite(member.layout_x)) fail(`Layout position for ${member.name} must be a finite number.`);
     }
     const pairs = new Set();
@@ -63,7 +64,7 @@
     if (!name) throw new Error('Enter a member name.');
     if (!source.classes.includes(className)) throw new Error('Choose a valid class.');
     const roles = [...new Set(Array.isArray(input.roles) ? input.roles : [])];
-    if (roles.some(role => !ALLOWED_ROLES.has(role))) throw new Error('Roles can only be President and/or Sensei.');
+    if (roles.some(role => !ALLOWED_ROLES.has(role))) throw new Error('Roles can only be President, Sensei, and/or Evan Chen Award.');
     const row = source.members.filter(member => member.class === className);
     const layout_x = input.layout_x === undefined || input.layout_x === ''
       ? (row.length ? Math.max(...row.map(member => member.layout_x)) + 2 : 1)
@@ -118,12 +119,12 @@
     const nameInput = el('input', {name: 'name', required: 'required', maxlength: '120', placeholder: 'Full Name', 'aria-label': 'Member name'});
     const classSelect = el('select', {name: 'class', required: 'required', 'aria-label': 'Class'});
     source.classes.forEach(className => classSelect.append(el('option', {value: className}, className)));
-    const rolesLabel = el('span', {className: 'lineage-editor__label'}, 'Leadership Roles');
+    const rolesLabel = el('span', {className: 'lineage-editor__label'}, 'Roles and Honors');
     const roleControls = el('div', {className: 'lineage-editor__roles'});
-    ['president', 'sensei'].forEach(role => {
+    ALLOWED_ROLES.forEach(role => {
       const label = el('label');
       const checkbox = el('input', {type: 'checkbox', value: role});
-      label.append(checkbox, doc.createTextNode(role === 'president' ? ' President' : ' Sensei'));
+      label.append(checkbox, doc.createTextNode(` ${ROLE_LABELS[role]}`));
       roleControls.append(label);
     });
     const addMemberButton = el('button', {type: 'submit'}, 'Add Member');

@@ -13,7 +13,7 @@ DEFAULT_SOURCE = ROOT / "source/lineage.json"
 ROOT_FIELDS = {"schema_version", "classes", "members", "edges"}
 MEMBER_FIELDS = {"id", "name", "class", "roles", "layout_x"}
 EDGE_FIELDS = {"source", "target"}
-ALLOWED_ROLES = {"president", "sensei"}
+ALLOWED_ROLES = {"president", "sensei", "evan_chen_award"}
 
 
 def build_graph(raw: object) -> dict:
@@ -60,7 +60,7 @@ def build_graph(raw: object) -> dict:
             raise ValueError(f"Unknown class for member {name!r}.")
         if (not isinstance(roles, list) or any(not isinstance(role, str) or role not in ALLOWED_ROLES for role in roles)
                 or len(set(roles)) != len(roles)):
-            raise ValueError(f"Roles for {name!r} must be unique values from president/sensei.")
+            raise ValueError(f"Roles for {name!r} must be unique values from president/sensei/evan_chen_award.")
         if isinstance(layout_x, bool) or not isinstance(layout_x, (int, float)) or not math.isfinite(layout_x):
             raise ValueError(f"layout_x for {name!r} must be a finite number.")
         viewer_nodes.append({

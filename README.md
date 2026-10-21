@@ -16,7 +16,7 @@ to `python3 -m venv`; the Python scripts use only the standard library. Run
 `make help` to see all available commands.
 
 The canonical, sanitized source is [`source/lineage.json`](source/lineage.json). It
-contains stable opaque IDs, display names, pledge class, President/Sensei
+contains stable opaque IDs, display names, pledge class, President/Sensei/Evan Chen Award
 roles, layout positions, and relationship edges only. It intentionally excludes
 roster numbers and all contact, location, career, and other directory fields. The
 preparation script validates this file and writes the viewer's preloaded graph to
@@ -25,7 +25,7 @@ ignored `public/data/`; these generated files must not be committed.
 ## Contribute a lineage update
 
 For a guided edit, open **Edit lineage** in the viewer. Add members with their class
-and optional President/Sensei role; search for a Big and Little to add a relationship,
+and optional President/Sensei/Evan Chen Award roles; search for a Big and Little to add a relationship,
 or remove a recorded relationship. The graph updates locally as you work. Use
 **Download lineage.json for PR**, replace `source/lineage.json` with the downloaded
 file, run the checks below, and open a pull request. Nothing is written to the hosted

@@ -29,6 +29,10 @@ test('roles are allowlisted and retain combined President/Sensei styling', () =>
   const graph=L.normalize({nodes:[{id:1,display_name:'Example',class_name:'Class A',rank:0,x:1,roles:['president','sensei','administrator']}],edges:[]});
   assert.deepEqual(graph.nodes[0].roles,['president','sensei']);
 });
+test('Evan Chen Award is an allowlisted role alongside President/Sensei', () => {
+  const graph=L.normalize({nodes:[{id:1,display_name:'Example',class_name:'Class A',rank:0,x:1,roles:['sensei','evan_chen_award']}],edges:[]});
+  assert.deepEqual(graph.nodes[0].roles,['sensei','evan_chen_award']);
+});
 test('layout preserves class rows, original order, and minimum card spacing', () => {
   const nodes=[node(1,0,1),node(2,0,1.1),node(3,0,1.1),node(4,1,3)];
   for(const compact of [false,true]) {

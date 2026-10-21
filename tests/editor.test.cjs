@@ -35,10 +35,15 @@ test('editor rejects duplicate, self, unknown, and backwards relationships', () 
   assert.throws(() => Editor.addEdge(source(), LITTLE, BIG), /earlier class/);
 });
 
+test('editor accepts the Evan Chen Award role', () => {
+  const result = Editor.addMember(source(), {name:'Honoree',class:'Beta',roles:['president','evan_chen_award']}, () => OTHER);
+  assert.deepEqual(result.member.roles, ['president','evan_chen_award']);
+});
+
 test('editor never persists unrecognized member fields and rejects unsupported roles', () => {
   const result = Editor.addMember(source(), {name:'Safe Name',class:'Beta',email:'secret@example.test'}, () => OTHER);
   assert.equal('email' in result.member, false);
-  assert.throws(() => Editor.addMember(source(), {name:'Unsafe',class:'Beta',roles:['admin']}, () => OTHER), /President and\/or Sensei/);
+  assert.throws(() => Editor.addMember(source(), {name:'Unsafe',class:'Beta',roles:['admin']}, () => OTHER), /President, Sensei, and\/or Evan Chen Award/);
   assert.throws(() => Editor.addMember(source(), {name:'Unsafe',class:'missing'}, () => OTHER), /valid class/);
 });
 

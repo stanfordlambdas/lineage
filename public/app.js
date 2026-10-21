@@ -112,9 +112,10 @@ function render() {
   }
   for (const n of visible) {
     const p=points.get(n.id);
-    const roleClass=n.roles.includes('president')&&n.roles.includes('sensei')?'both':n.roles[0]||'';
+    const president=n.roles.includes('president'), sensei=n.roles.includes('sensei'), award=n.roles.includes('evan_chen_award');
+    const roleClass=president&&sensei?'both':president?'president':sensei?'sensei':'';
     const roleLabel=roleClass==='both'?'President and Sensei':roleClass==='president'?'President':roleClass==='sensei'?'Sensei':'';
-    const g=svgEl('g',{class:`node ${roleClass}`,transform:`translate(${p.x},${p.y})`,tabindex:'0',role:'button','aria-label':`${n.display_name}, ${n.class_name} class${roleLabel?`, ${roleLabel}`:''}`});
+    const g=svgEl('g',{class:`node ${roleClass}${award?' award':''}`,transform:`translate(${p.x},${p.y})`,tabindex:'0',role:'button','aria-label':`${n.display_name}, ${n.class_name} class${roleLabel?`, ${roleLabel}`:''}${award?', Evan Chen Award recipient':''}`});
     g.append(svgEl('title',{},`${n.display_name} · ${n.class_name}`),svgEl('rect',{x:-Lineage.CARD_W/2,y:-Lineage.CARD_H/2,width:Lineage.CARD_W,height:Lineage.CARD_H,class:'card'}));
     const name=svgEl('text',{x:0,'text-anchor':'middle',class:'name'});
     const lines=[];
@@ -128,6 +129,7 @@ function render() {
     lines.forEach((line,i)=>name.append(svgEl('tspan',{x:0,dy:i===0?startY:16},line)));
     g.append(name);
     if(roleClass) g.append(svgEl('text',{x:0,y:startY+lines.length*16,'text-anchor':'middle',class:'role','aria-hidden':'true'},roleClass==='both'?'President & Sensei':roleLabel));
+    if(award) g.append(svgEl('text',{x:Lineage.CARD_W/2-14,y:-Lineage.CARD_H/2+18,'text-anchor':'middle',class:'award-mark','aria-hidden':'true'},'★'));
     g.addEventListener('click',()=>{ if(!suppressClick) select(n.id); });
     g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();select(n.id);}});
     nodeLayer.append(g); nodeElements.set(n.id,g);
@@ -255,7 +257,7 @@ function showEmptyDetails() {
   aside.append(el('div', {class:'details-empty'}, ''));
   const content = aside.firstElementChild;
   content.append(el('span', {class:'eyebrow'}, 'Lineage Details'), el('h2', {}, 'Explore a Lineage'),
-    el('p', {}, graph ? 'Search for a member or select a node to see their class, leadership role, Bigs, Littles, and connected lineage.' : 'Load the graph to explore member relationships.'));
+    el('p', {}, graph ? 'Search for a member or select a node to see their class, leadership roles and honors, Bigs, Littles, and connected lineage.' : 'Load the graph to explore member relationships.'));
 }
 
 function renderDetails(member) {
@@ -275,7 +277,8 @@ function renderDetails(member) {
   if (president && sensei) badges.append(el('span', {class:'badge both-badge'}, 'President & Sensei'));
   else if (president) badges.append(el('span', {class:'badge president-badge'}, 'President'));
   else if (sensei) badges.append(el('span', {class:'badge sensei-badge'}, 'Sensei'));
-  else badges.append(el('span', {class:'badge'}, 'Member'));
+  if (member.roles.includes('evan_chen_award')) badges.append(el('span', {class:'badge award-badge'}, 'Evan Chen Award'));
+  if (!member.roles.length) badges.append(el('span', {class:'badge'}, 'Member'));
   heading.append(badges);
   aside.append(heading);
 
