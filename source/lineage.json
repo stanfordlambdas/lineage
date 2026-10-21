@@ -2255,7 +2255,9 @@
     {
       "id": "7f0af117-750e-4391-9296-a474ab28cb6d",
       "name": "Neev Seedani",
-      "roles": [],
+      "roles": [
+        "evan_chen_award"
+      ],
       "layout_x": 13.75,
       "class": "Alpha Xi"
     },
