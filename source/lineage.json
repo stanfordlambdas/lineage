@@ -11,14 +11,18 @@
     {
       "id": "1455bc60-1a87-433e-9e3b-f33b0c730ebe",
       "name": "Hanns Lee",
-      "roles": [],
+      "roles": [
+        "sensei"
+      ],
       "layout_x": 19,
       "class": "Founding"
     },
     {
       "id": "75fec6b1-009b-4e7c-abf0-553144ad2f6d",
       "name": "Ernie Sibal",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 6.25,
       "class": "Founding"
     },
@@ -39,7 +43,9 @@
     {
       "id": "ef33453c-9977-41ff-957c-9772adbea3c5",
       "name": "Michael Yun",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 10,
       "class": "Founding"
     },
@@ -132,14 +138,18 @@
     {
       "id": "ec48f3fb-179b-48d9-8de9-4acd1ed62d6a",
       "name": "Johnny Sun",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 9,
       "class": "Alpha"
     },
     {
       "id": "8e581a53-0d07-421a-a2ea-acacdd36d328",
       "name": "John Chang",
-      "roles": [],
+      "roles": [
+        "sensei"
+      ],
       "layout_x": 6.25,
       "class": "Alpha"
     },
@@ -188,7 +198,9 @@
     {
       "id": "6f640b02-f19b-4f43-a35a-1f83cd44c692",
       "name": "David Li",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 14.5,
       "class": "Alpha"
     },
@@ -209,7 +221,9 @@
     {
       "id": "59d4cf6b-0b45-4370-b6da-d124fc18ab30",
       "name": "Mike Siegl",
-      "roles": [],
+      "roles": [
+        "sensei"
+      ],
       "layout_x": 17.5,
       "class": "Alpha"
     },
@@ -323,7 +337,9 @@
     {
       "id": "76a0cde0-9f92-4fe2-b949-766ef41e4173",
       "name": "Jon Chen",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 2.5,
       "class": "Delta"
     },
@@ -488,6 +504,7 @@
       "id": "4f611f43-551b-4aa7-998c-462161a968f2",
       "name": "Chris Mah",
       "roles": [
+        "sensei",
         "evan_chen_award"
       ],
       "layout_x": 13,
@@ -1010,7 +1027,8 @@
       "id": "5b8d66e0-c607-4814-bbc7-7dc225cd9c35",
       "name": "Kenny Kim",
       "roles": [
-        "sensei"
+        "sensei",
+        "evan_chen_award"
       ],
       "layout_x": 7,
       "class": "Pi"
@@ -1829,7 +1847,9 @@
     {
       "id": "76b8f010-069d-4cc3-a9bc-b5239543d8f2",
       "name": "Charles Tsao",
-      "roles": [],
+      "roles": [
+        "sensei"
+      ],
       "layout_x": 23.25,
       "class": "Alpha Zeta"
     },
@@ -1857,7 +1877,9 @@
     {
       "id": "3aa430db-875f-4705-8019-f011aea4df59",
       "name": "Ryan Peng",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 13,
       "class": "Alpha Zeta"
     },
@@ -1913,7 +1935,10 @@
     {
       "id": "1b10754f-3d9f-4847-a21d-9c6738988ee4",
       "name": "Michael Chang",
-      "roles": [],
+      "roles": [
+        "president",
+        "sensei"
+      ],
       "layout_x": 15.5,
       "class": "Alpha Eta"
     },
@@ -1955,7 +1980,9 @@
     {
       "id": "4742ae11-3f5f-492d-9460-a8679674e5eb",
       "name": "John Altankhuyag",
-      "roles": [],
+      "roles": [
+        "sensei"
+      ],
       "layout_x": 8.25,
       "class": "Alpha Eta"
     },
@@ -2004,7 +2031,9 @@
     {
       "id": "6551b26a-0e2f-4793-bae0-b24ca8cf3c5d",
       "name": "Andrew (Gan) Gan",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 23.25,
       "class": "Alpha Theta"
     },
