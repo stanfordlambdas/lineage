@@ -2090,6 +2090,7 @@
       "id": "5feb748a-a69b-409b-8eb8-c568b6002afa",
       "name": "David Zhou",
       "roles": [
+        "sensei",
         "evan_chen_award"
       ],
       "layout_x": 3.5,
@@ -2098,7 +2099,9 @@
     {
       "id": "6f697420-2d88-473a-91d7-5f637a5f1868",
       "name": "Richard Cheung",
-      "roles": [],
+      "roles": [
+        "president"
+      ],
       "layout_x": 23.25,
       "class": "Alpha Kappa"
     },
