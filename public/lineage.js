@@ -16,15 +16,16 @@
         : (Array.isArray(n.roles) ? n.roles : []);
       return {
         id: index + 1,
-        display_name: String(source ? n.Display_Name : (n.display_name || n.name || '')).trim(),
-        class_name: String(source ? n.Class : n.class_name).trim(),
+        // ?? '' keeps a missing value empty so it fails the check below instead of becoming "undefined".
+        display_name: String((source ? n.Display_Name : (n.display_name || n.name)) ?? '').trim(),
+        class_name: String((source ? n.Class : n.class_name) ?? '').trim(),
         rank: Number(source ? n.Class_Order - 1 : n.rank),
         x: Number(source ? n.Layout_X : n.x),
         roles: [...new Set(rawRoles.filter(role => role === 'president' || role === 'sensei' || role === 'evan_chen_award'))],
       };
     });
     const byId = new Map(nodes.map(n => [n.id, n]));
-    if (nodes.some(n => !n.display_name || !Number.isInteger(n.rank) || n.rank < 0 || !Number.isFinite(n.x))) throw Error('The graph contains a missing name or invalid coordinates.');
+    if (nodes.some(n => !n.display_name || !n.class_name || !Number.isInteger(n.rank) || n.rank < 0 || !Number.isFinite(n.x))) throw Error('The graph contains a missing name or class, or invalid coordinates.');
     const unique = new Map();
     for (const e of raw.edges) {
       const a = idMap.get(Number(e.source)), b = idMap.get(Number(e.target));
