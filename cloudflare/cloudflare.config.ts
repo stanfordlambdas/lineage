@@ -6,5 +6,6 @@ export default defineConfig({
     name: "stanford-lambdas-lineage",
     compatibilityDate: "2026-10-18",
     entrypoint,
+    domains: ["stanfordlambdas.org"],
   },
 });
