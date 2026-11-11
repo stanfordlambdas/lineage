@@ -133,12 +133,12 @@ The preloaded graph is generated from the tracked sanitized source. Do not deplo
 repository root or local reconciliation files. Deployment response headers prohibit
 network connections from the application.
 
-The Worker is served on its `workers.dev` hostname. Custom-domain setup is separate;
-first confirm the chapter still controls its registrar account before changing DNS.
+The Worker is served at <https://stanfordlambdas.org/> through a Cloudflare Custom
+Domain. Cloudflare creates the DNS record and provisions TLS when the Worker deploys.
+The `workers.dev` hostname remains available as a fallback.
 
 ## Verification
 
 `make test` runs viewer, editor, UI, and source-validation tests. `make lint` checks
 Python and JavaScript syntax plus whitespace. CI runs both targets and builds the
 Worker before any deployment.
-
