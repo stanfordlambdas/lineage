@@ -60,3 +60,8 @@ test('public viewer renders member names without roster IDs, roles, or profile U
   assert.doesNotMatch(app,/Roster_Number|Is_President|Is_Sensei|Primary_Email|data-source|data-target/);
   assert.doesNotMatch(html,/Member details|#profile|Show members|anonymous relationship graph/i);
 });
+test('imports with a missing name or class are rejected instead of showing "undefined"', () => {
+  assert.throws(()=>L.normalize({nodes:[{Roster_Number:1,Class:'A',Class_Order:1,Layout_X:1}],edges:[]}), /missing name or class/);
+  assert.throws(()=>L.normalize({nodes:[{Roster_Number:1,Display_Name:'Example',Class_Order:1,Layout_X:1}],edges:[]}), /missing name or class/);
+  assert.throws(()=>L.normalize({nodes:[{id:1,display_name:'Example',rank:0,x:1}],edges:[]}), /missing name or class/);
+});
